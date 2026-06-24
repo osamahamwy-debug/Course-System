@@ -1,0 +1,54 @@
+/* Login — prefixed classes (lg-*) so nothing collides with shell.css. Faithful to the prototype login.html. */
+.lgp{
+  --gold:#d4a373; --gold-l:#e6c8a4; --gold-d:#b07a44;
+  --glass:rgba(255,255,255,.10); --glass-2:rgba(255,255,255,.14); --glass-bd:rgba(255,255,255,.22);
+  --lfont:"Lenos","Segoe UI","Tahoma","Noto Naskh Arabic",system-ui,sans-serif;
+  position:fixed; inset:0; z-index:60; color:#fff; font-family:var(--lfont); overflow:hidden;
+  background:
+    radial-gradient(120% 120% at 50% 38%, rgba(0,0,0,0) 54%, rgba(0,0,0,.42) 100%),
+    radial-gradient(130% 120% at 75% 6%, #1c7293 0%, #134d63 46%, #0b132b 100%);
+}
+.lgp .lg-wm{position:fixed;top:50%;right:50%;transform:translate(50%,-50%);width:min(700px,82vw);opacity:.13;pointer-events:none}
+
+.lgp .lg-wrap{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
+.lgp .lg-card{width:100%;max-width:412px;padding:38px 34px;border-radius:24px;
+  background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--glass-bd);box-shadow:0 24px 70px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.18)}
+
+.lgp .lg-lang{position:absolute;top:22px;inset-inline-end:22px;z-index:3;display:flex;align-items:center;gap:6px;
+  background:var(--glass);backdrop-filter:blur(6px);border:1px solid var(--glass-bd);border-radius:20px;padding:5px 10px;font-size:.78rem;color:#eaf3ee}
+.lgp .lg-lang svg{width:15px;height:15px;opacity:.85;flex:none}
+.lgp .lg-lang b{color:#fff}
+
+.lgp .lg-top{display:block;text-align:center;margin-bottom:26px}
+.lgp .lg-ring{width:96px;height:96px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,.04));border:1px solid var(--glass-bd)}
+.lgp .lg-ring img{width:64px;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.lgp .lg-top h1{font-size:1.28rem;margin:0 0 4px;font-weight:800;letter-spacing:.2px;color:#fff}
+.lgp .lg-top .lg-min{color:var(--gold-l);font-size:.92rem;font-weight:700}
+
+.lgp .lg-lbl{display:block;font-size:.82rem;font-weight:600;margin:0 2px 7px;color:rgba(255,255,255,.9)}
+.lgp .lg-field{position:relative;margin-bottom:16px}
+/* logical positions: the lead icon hugs the text start and the eye hugs the end,
+   in BOTH Arabic (RTL) and English (LTR) */
+.lgp .lg-field .lg-ic{position:absolute;top:50%;transform:translateY(-50%);inset-inline-start:13px;width:18px;height:18px;color:var(--gold-l);display:flex;align-items:center;justify-content:center}
+.lgp .lg-field .lg-ic svg{width:18px;height:18px}
+.lgp .lg-field .lg-eye{inset-inline-start:auto;inset-inline-end:13px;cursor:pointer;color:rgba(255,255,255,.7);transition:color .15s}
+.lgp .lg-field .lg-eye:hover{color:#fff}
+/* symmetric inline padding: typed text can never slide under the lead icon or the eye */
+.lgp .lg-field input{width:100%;border:1px solid var(--glass-bd);background:var(--glass-2);border-radius:13px;
+  padding-block:13px;padding-inline-start:42px;padding-inline-end:42px;font-size:.95rem;font-family:var(--lfont);color:#fff;outline:none;transition:.15s}
+.lgp .lg-field input::placeholder{color:rgba(255,255,255,.55)}
+.lgp .lg-field input:focus{border-color:var(--gold);background:rgba(255,255,255,.2);box-shadow:0 0 0 3px rgba(212,163,115,.25)}
+
+.lgp .lg-btn{width:100%;margin-top:8px;border:0;border-radius:13px;padding:14px;font-size:1rem;font-weight:800;font-family:var(--lfont);cursor:pointer;
+  color:#0b132b;background:linear-gradient(135deg,#e9cda6,#d4a373 55%,#b07a44);
+  box-shadow:0 10px 24px rgba(176,122,68,.4);transition:.15s;display:flex;align-items:center;justify-content:center;gap:9px}
+.lgp .lg-btn svg{width:18px;height:18px;flex:none}
+.lgp .lg-btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.lgp .lg-btn:disabled{cursor:default;opacity:.75;filter:none;transform:none}
+.lgp .lg-err{margin-top:12px;color:#ffb4a6;font-size:.82rem;text-align:center}
+.lgp .lg-foot{margin-top:24px;text-align:center;color:rgba(255,255,255,.6);font-size:.76rem}
+.lgp .lg-dev{margin-top:7px;color:rgba(255,255,255,.8);font-weight:600;cursor:pointer;transition:color .15s}
+.lgp .lg-dev:hover{color:#e6c8a4}
+.lgp .lg-dev bdi{letter-spacing:.4px}
